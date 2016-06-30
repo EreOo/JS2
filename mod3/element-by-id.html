@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Доступ к определенному элементу</title>
+     <meta charset="utf-8">
+	<script type="text/javascript">
+		function changeElement()
+		{
+			var myDiv = document.getElementById("myDiv");
+			myDiv.firstChild.nodeValue = "Новый текст";
+			myDiv.style.color = "red";
+		}
+	
+	</script>	
+</head>
+
+<body>
+	<h1>Доступ к определенному элементу</h1>
+	<div id="myDiv">Мой DIV</div>
+	<p>
+		<a href="javascript:changeElement()">Изменить элемент</a>
+	</p>
+</body>
+</html>

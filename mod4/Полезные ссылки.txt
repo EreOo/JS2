@@ -1,0 +1,2 @@
+https://developer.mozilla.org/en/DOM/element.clientLeft
+http://msdn.microsoft.com/en-us/library/ms530302(VS.85).aspx

@@ -1,0 +1,125 @@
+/*****************
+1 Конспект по работе с событиями
+*****************/
+
+старая модель:
+один элемент - одно событие
+element.onevent = eventHandler
+
+рисунок
+
+<div id="content">Содержимое контейнера</div>
+
+var myDiv = document.getElementById("content");
+
+при создании функции лучше ее оборачивать в объект чтобы не следить в глобальной области видимости
+var divClick = {
+ clickHandler: function(){
+  alert("Произошло нажатие")
+ }
+}
+//Назначили обработчик для нажатия на контейнер
+myDiv = divClick.clickHandler;
+
+/*****************
+2 Проблема
+*****************/
+
+element.onclick = divClick1.clickHandler;
+element.onclick = divClick2.clickHandler;
+
+но можно обойти эту проблему
+
+element.onclick = function()
+{
+script1.clickHandler();
+script2.clickHandler();
+}
+
+/*******************************
+3 решение 
+In
+*********************/
+
+IE9, FF, Ch, Moz, Saf: element.addEventListener("event", eventListener, false);
+
+IE: element.attachEvent("onevent", eventListener);
+
+//Кроссбраузерно
+if (typeof element.addEventListener != "undefined")
+{
+element.addEventListener("event", eventListener, false);
+}
+else if (typeof element.attachEvent != "undefined")
+{
+element.attachEvent("onevent", eventListener);
+}
+
+
+
+/******************************
+4 действия по умолчанию
+*****************************/
+clickListener: function(event)
+{
+if (!confirm("Вы уверены, что хотите покинуть этот сайт?"))
+{
+event.preventDefault();
+}
+}
+IE
+clickListener: function()
+{
+if (!confirm("Are you sure you want to leave this site?"))
+{
+event.returnValue = false;
+}
+}
+
+/*****************************
+5 Остановка распространения события
+****************************/
+linkClickListener: function(event)
+{
+if (typeof event == "undefined")
+{
+event = window.event;
+}
+if (typeof event.stopPropagation != "undefined")
+{
+event.stopPropagation();
+}
+else
+{
+event.cancelBubble = true;
+}
+}
+
+/**********************************
+6 Отличия в IE
+*************/
+¦ Internet Explorer использует attachEvent / detachEvent добавлять и удалять события
+слушателей, а addEventListener / removeEventListener.
+¦ Internet Explorer использует "OnEvent" стиль именования для событий, а не только
+"событие".
+¦ Internet Explorer использует глобальную переменную событие вместо передачи объекта события
+к слушателю в качестве аргумента.
+¦ Чтобы предотвратить действие по умолчанию в место, Internet Explorer требует, чтобы вы
+установить ReturnValue случае объект собственности, а не вызывая его метод preventDefault
+метод.
+¦ Internet Explorer не поддерживает захват фазы события распространения.
+¦ Чтобы остановить событие от распространяющейся, Internet Explorer, необходимо задать событие
+cancelBubble объекта собственности, а не вызывая его stopPropagation method.h
+
+/*******************************
+Написание своего плагина для работы с событиями
+*********************/
+Core.addEventListener(element, "event", eventListener);
+Core.removeEventListener(element, "event", eventListener);
+Core.preventDefault(event);
+Core.stopPropagation(event);
+
+Core.start = function(runnable)
+{
+Core.addEventListener(window, "load", runnable.init);
+};

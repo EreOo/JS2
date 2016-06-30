@@ -1,0 +1,55 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Стили</title>
+<style type="text/css">
+body{ margin:0;}
+#out{margin: 100px 100px 0 300px;padding: 50px; background: #69c}
+#in{padding: 40px 60px; background: #369; border: 20px solid #fff}
+#target {width: 200px; height:150px; background: #f60;}
+#target.a{width: 300px; height:300px; background: #fff;}
+
+</style>
+<script type="text/javascript">
+
+function changeStyle(e){
+ 
+ // Задать бордюр у элемента 15px solid #ffc через свойство style
+ 
+ // Задать новый класс и присвоить этот класс элементу
+ // через свойство className
+ 
+ //Задать плавное затухание элемента
+ 
+// Проверить что веведет alert(e.style.background)
+
+// Условная компиляция
+
+//getStyle(e, "backgroundColor")
+}
+
+function getStyle(element,style){
+
+
+}
+
+/*function getStyle(element,style){
+ try {
+   var x = element.ownerDocument.defaultView.getComputedStyle(element, null);
+ } catch(z){
+   x = element.currentStyle;
+ }
+ alert(x[style]);
+}*/
+
+</script>
+</head>
+<body>
+<div id="out"> 
+ <div id="in">
+   <div id="target" onclick="changeStyle(this);"></div> 
+ </div>
+</div>
+</body>
+</html>

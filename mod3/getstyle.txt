@@ -1,0 +1,8 @@
+function getStyle(element,style){
+ try {
+   var x = element.ownerDocument.defaultView.getComputedStyle(element, null);
+ } catch(z){
+   x = element.currentStyle;
+ }
+ alert(x[style]);
+}

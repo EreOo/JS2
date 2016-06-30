@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Старый документ</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	html{background:#9ae;cursor:default}
+	body{margin:0;}
+	p{margin:0;padding:20px;cursor:default }
+	</style>
+	<script type="text/javascript">
+		var example = "я переменная example внутреннего окна";
+	
+	function f(){
+	/*Установить переменную main родительского окна в новое значение 3*/
+
+	
+	/*Вызвать функцию g() родительского окна*/
+
+	
+	}
+	
+	function g(){
+	alert("Я функция g(), определенная в глобальном контексте внутреннего окна");
+	
+	}
+	</script>
+</head>
+
+<body onclick="f();">
+	<p> Что надо, хозяин? </p>
+</body>
+</html>

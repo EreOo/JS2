@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Работа с зависимыми списками</title>
+<meta charset=utf-8">
+<script type="text/javascript">
+var servers = Array('PHP1. Основы серверного','PHP2. Работа с MySQL', 'PHP3. ООП и XML');
+var clients = Array('Javascript1. Основы','Javascript2. Чуть большее.');
+ 
+ //Написать функцию отображения контекстного списка.
+function showNames(v){
+
+}
+</script>
+</head>
+ 
+<body onload="showNames('clients')">
+ 
+<select id="level" onchange="showNames(this.value)">
+    <option value="clients">Клиентское программирование </option> 
+    <option value="servers">Серверное программирование</option> 
+</select>
+ 
+<select id="names">
+     
+</select>
+ 
+</body>
+</html>

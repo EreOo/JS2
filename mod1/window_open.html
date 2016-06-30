@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Открытие новых окон</title>
+<meta charset="utf-8">
+<style type="text/css">
+p{float: left; margin: 0 8px 0 0; padding: 20px; cursor: default;}
+.p1{background: #ccf}
+.p2{background: #fcc}
+.p3{background: #cfc}
+</style>
+<script type="text/javascript">
+var win;
+
+function win_open(){
+ var w = 300;
+ var h = 200;
+ var l = 200;
+ var t = 300;
+ 
+ /* Открыть новое окно - метод open()*/
+
+ 
+ /*Установить параметры окна*/
+
+ 
+ /*Открыть окно с установленными параметрами*/
+ 
+ 
+ /*Открыть окно с определенным именем*/
+
+ 
+ /*Открыть окно с определенным адресом*/
+
+}
+
+function win_close(){
+/* Закрыть дочернее окно - метод close()*/
+}
+function win_move(){
+/*Проверить существование дочернего окна - метод closed()*/
+ 
+  if (win && !win.closed){
+  /*Передать фокус дочернему окну - метод focus()*/
+ 
+  
+  /*Передвинуть дочернее окно на 50 пикселей вправо и вниз - метод moveBy()*/
+  
+  }
+}
+</script>
+</head>
+<body>
+
+<p class="p1" onClick="win_open();">Открыть окно</p>
+<p class="p2" onClick="win_close();">Закрыть окно</p>
+<p class="p3" onClick="win_move();">Начать движение</p>
+
+</body>
+</html>

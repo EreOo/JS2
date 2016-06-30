@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Взаимодействие между окнами</title>
+<style type="text/css">
+div {float:left;}
+p {margin:0 0 8px; padding: 20px; background:#ccf; cursor:default;width: 270px}
+iframe{border: 3px solid #69c}
+</style>
+<script type="text/javascript">
+var main = "я - переменная main главного окна";
+	function f(){
+	/*Получить значение глобальной переменной, как свойства глобального окна*/
+	//alert(window.main);
+	
+	/*Получить количество внутренних оконных элементов - свойство length*/
+   //alert(window.frames.length);
+  // alert(frames.length);
+	
+	/*Проверить свойство length в глобальном объекте*/
+	//alert(length);
+	
+	/*Получить ссылку на первый оконный элемент - свойство length*/
+	//alert(frames[0]);
+	
+	/*Обратиться к этому же элементу по имени*/
+	//alert(frames.content);
+	//alert(content);
+	
+	/*Получить значение переменной example другого окна*/
+	//alert(frames.content.example);
+	
+	/*Вызвать функцию, определенную в контексте другого окна*/
+	//frames.content.g();
+	
+	/*Вызвать функцию g() текущего окна с помощью родительского окна*/
+	//parent.frames.content.g();
+	
+	/*Создать переменную frame и присвоить ей коллекцию фреймов страницы. Обратиться к переменным simpleVar и simpleVar2, которые находятся в элементе <iframe> 	Три способа обращения к данным фрейма [0] ["имя"] .имя
+	*/
+
+	/*Вызвать функцию newFunction() из документа загруженного в <iframe>	*/
+
+
+
+    /*Убедиться что можно обращаться к свойствам загруженного документа
+	frames[0].document.body.style.background = "#cf0"*/
+  
+  
+	
+	/*Прочитать дату изменения документа - свойство lastModified*/
+	
+		
+	/*Прочитать кодировку документа - свойство characterSet или charset*/	
+
+				
+    /*Прочитать количество фреймов в  документе - свойство length*/
+	
+		
+	/*Изменить заголовок на другое значение - свойство title*/
+	
+	
+    /*Добавить в содержание документа параграф с текстом - свойство body и innerHTML */
+	}
+	function g(){
+	 alert(main);
+	}
+	
+	</script>
+</head>
+
+<body>
+	<p onclick="f();"> Текст параграфа </p>
+	
+	<iframe src="inner.html" name="content"></iframe>
+
+</body>
+</html>

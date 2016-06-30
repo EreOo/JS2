@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Свойства и методы событий</title>
+<meta charset=utf-8">
+<script type="text/javascript">
+  var x = document.getElementById('d');
+  
+function addEvent(element, event_name, handler){
+  try {
+      element.addEventListener(event_name,handler,false)  
+  } catch(z){
+     element.attachEvent('on'+event_name,handler)  
+  }
+}
+
+function cancelEvent(e){
+ try {
+  e.preventDefault();
+ } catch(z){
+   e.returnValue = false;
+ }
+
+}
+
+function stopEvent(e){
+ try {
+  e.stopPropagation();
+ } catch(z){
+   e.cancelBubble = true;
+ }
+
+}
+
+
+
+
+addEvent(window, 'load', f);
+//системные события плывут  до window в IE
+//события мыши и клавы всплывают только до документа
+function f(){
+   addEvent(document.q, 'submit', h);
+  addEvent(document.q.w, 'keydown', m);
+ /*   addEvent(document, 'keydown', n);*/
+   addEvent(document, 'mousedown', n);
+}
+function h(e){
+   e = e || event;
+   //e.preventDefault();
+  cancelEvent(e);
+  // addEvent(document, 'submit', g);
+}
+
+function m(e){
+   e = e || event;
+   stopEvent(e);
+  //alert('Я - поле формы');
+  //alert(e.type);
+  //alert(e.keyCode);
+  //alert(e.ctrlKey);
+  //document.q.r.value = e.altKey;
+ // document.q.r.value = e.shiftKey;
+  //document.q.r.value = e.ctrlKey;
+  
+}
+
+function n(e){
+   e = e || event;
+  //alert('Я - документ');
+  //document.q.r.value = e.altKey;
+  //document.q.r.value = e.ctrlKey;
+  //document.q.r.value = e.clientX + " x " + e.clientY;
+  //document.q.r.value = e.screenX + " x " + e.screenY;
+  // document.q.r.value = e.button;//мышиное свойство
+   document.q.r.value = e.which ;//нет в IE
+   
+   }
+</script>
+</head>
+
+<body>
+ <form action="" name="q">
+   <input type="text" name="w"> 
+   <input type="text" name="r"> 
+   <input type="submit" value="Отправить"> 
+ </form>
+</body>
+</html>

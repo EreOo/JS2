@@ -1,0 +1,79 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Генерация таблицы</title>
+<style type="text/css">
+body{ margin:0;}
+#out{margin: 100px 100px 0 300px;padding: 50px; background: #69c}
+#in{padding: 40px 60px; background: #369; border: 20px solid #fff;position: relative}
+#target{width: 200px; height:150px; background: #f60;}
+
+#test{position: absolute;left:0; top:0;background: #cfc}
+</style>
+<script type="text/javascript">
+
+function checkCoords(e){
+// Посмотреть относительно чего будет считаться отступ
+// и проверить значения в IE e.offsetParent
+
+
+ //Добавить свойство position: relative у #in
+
+
+// Первый способ подсчета
+// Сложение смещений. Старый
+var left = 0, top = 0;
+while (e) {
+ left += e.offsetLeft;
+ top += e.offsetTop;
+ e = e.offsetParent;
+}
+var x = document.createElement('div');
+x.id = 'test';
+x.style.width = left + 'px';
+x.style.height = top + 'px';
+document.body.appendChild(x);
+
+//Второй способ подсчета. "Новый"
+/*var z = e.getBoundingClientRect();
+var x = document.createElement('div');
+x.id = 'test';
+x.style.width = z.left + 'px';
+x.style.height = z.top + 'px';
+document.body.appendChild(x);*/
+//
+
+
+//Третий способ подсчета. Комбинированный
+/*var w2 = document.documentElement.scrollLeft ||
+document.body.scrollLeft;
+var h2 = document.documentElement.scrollTop ||
+document.body.scrollTop;
+
+var w3 = document.documentElement.clientLeft ||
+document.body.clientLeft;
+var h3 = document.documentElement.clientTop ||
+document.body.clientTop;
+
+
+var z = e.getBoundingClientRect();
+var x = document.createElement('div');
+x.id = 'test';
+x.style.width = z.left + w2 - w3 + 'px';
+x.style.height = z.top + h2 - h3 + 'px';
+document.body.appendChild(x);*/
+//
+
+}
+
+</script>
+</head>
+<body>
+<div id="out"> 
+ <div id="in">
+   <div id="target" onclick="checkCoords(this);"></div> 
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Заготовка для плагина создающего слайды</title>
+<style type="text/css">
+h1{font:22px Arial,Tahoma}
+h1 span{color: #009}
+.comment {color: #090}
+
+body{ margin:0;}
+div{color: #3f3408; vertical-align: middle; text-align: center;font:50px arial;position: absolute; width: 300px;height: 300px;filter: Alpha(opacity=0)}
+.slide{background: #fce;filter: Alpha(opacity=0);opacity:0}
+#slide1{background: #fce;filter: Alpha(opacity=100)}
+#slide2{background: #77c;}
+
+</style>
+<script type="text/javascript">
+
+/*Функция, принимает 
+element - элемент прзрачность которого нужно менять 
+steps - количество шагов
+timeStep- время шага 
+finOpasity - конечную прозрачность
+*/
+  function animation_opacity(element, steps, timeStep, finOpasity){
+   
+    var i = 0 ;
+	var curOpacity=0
+	if (element.style.opacity) var curOpacity=parseInt(element.style.opacity);
+	
+	if (curOpacity < finOpasity) {var direction = -1; var beg=0}
+	 else {var direction = 1; var beg=1};
+
+	function iterate(){
+	i++;
+
+	element.style.opacity = beg - direction*i/steps;
+		/*@cc_on
+	element.filters.alpha.opacity = 100*(beg - direction*i/steps);
+	@*/
+
+    if (i<steps){ 
+	/*Для отладки и изучения скрипта можно раскоментировать
+    element.innerHTML = "opacity="+element.style.opacity+"<br>";
+    element.innerHTML += "direction="+direction+"<br>";
+    element.innerHTML += "finOpasity="+finOpasity+"<br>";
+    element.innerHTML += "curOpacity="+curOpacity+"<br>";*/
+	setTimeout(iterate, timeStep*1000);}
+	}
+  
+   iterate();
+
+   
+  }
+var page = 0; 
+
+function go(){
+var slides = document.getElementsByClassName("slide");
+alert(page)
+  page++
+  animation_opacity(slides[page-1], 40, 0.09,0);
+  animation_opacity(slides[page], 40, 0.09,1);
+}
+
+
+</script>
+</head>
+<body onclick="go()">
+<h1>Заготовка для слайд-шоу. Нажмите в любой части экрана</h1>
+<code class="comment">/*Функцию можно завернуть в плагин создающий слайд-шоу. При этом задаются элементы div с соответствующими классами.*/</code>
+
+<div id="slide1" class="slide" >Привет, мир! </div>
+<div id="slide2" class="slide" >Добро пожаловать в мир построения слайдов</div>
+<div class="slide" >Скоро! Курсы по jQuery! ;)</div>
+</body>
+</html>

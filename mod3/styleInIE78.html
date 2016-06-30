@@ -1,0 +1,54 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Генерация таблицы</title>
+<style type="text/css">
+body{ margin:0;}
+#out{margin: 100px 100px 0 300px;padding: 50px; background: #69c}
+#in{padding: 40px 60px; background: #369; border: 20px solid #fff}
+#target{width: 200px; height:150px; background: #f60;}
+/*#in{position: relative}*/
+/*#test{position: absolute;left:0; top:0;background: #cfc}*/
+</style>
+<script type="text/javascript">
+
+function changeStyle(e){
+ 
+ // Задать бордюр у элемента через свойство style
+
+ 
+ // Задать новый класс и присвоить этот класс элементу
+ 
+ 
+ //Задать плавное затухание элемента
+ var step = 100, time = 1000, i = 0;
+ e.style.filter = 'alpha(opacity=100)';
+  function g(){
+    i++;
+	e.style.opacity = 1 - i/step;
+	/*@cc_on
+	e.filters.alpha.opacity = 100*(1 - i/step);
+	@*/
+    if (i<step){
+	  setTimeout(arguments.callee, time / step);
+	}
+  }
+ g();
+}
+
+function getStyle(element,style){
+
+
+}
+
+</script>
+</head>
+<body>
+<div id="out"> 
+ <div id="in">
+   <div id="target" onclick="changeStyle(this);"></div> 
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Реализация drag & drop</title>
+<meta charset=utf-8">
+<style type="text/css">
+.drag{
+  position: absolute;
+  left: 100px;
+  top: 100px
+  width: 200px;
+  background: #369;
+}
+
+.drag .top{
+ background: #369;
+ color: #fff;
+ padding: 10px;
+ margin: 2px;
+}
+
+.drag .bottom{
+ height: 100px;
+ background: #fff;
+ overflow: auto;
+ margin: 0 2px 2px;
+ padding: 10px;
+}
+</style>
+
+<script type="text/javascript" src="js/all.js"></script>
+
+</head>
+
+<body>
+ <div class="drag">
+   <div class="top">Заголовок</div>
+   <div class="bottom">Содержание</div>
+ </div>
+ 
+ <script type="text/javascript">
+ //Удалить всё содержимое раздела js и переместить его в раздел head. "js/common.js"
+   
+ //Подключить "js/drag.js"
+  
+function addEvent(element, event_name, handler){
+  try {
+      element.addEventListener(event_name,handler,false)  
+  } catch(z){
+     element.attachEvent('on'+event_name,handler)  
+  }
+}
+function removeEvent(element, event_name, handler){
+  try {
+      element.removeEventListener(event_name,handler,false)  
+  } catch(z){
+     element.detachEvent('on'+event_name,handler)  
+  }
+}
+
+function cancelEvent(e){
+ try {
+  e.preventDefault();
+ } catch(z){
+   e.returnValue = false;
+ }
+
+}
+
+function stopEvent(e){
+ try {
+  e.stopPropagation();
+ } catch(z){
+   e.cancelBubble = true;
+ }
+
+}
+ </script>
+</body>
+</html>

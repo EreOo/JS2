@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Коллекция объекта Document, name, id</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+p {clear:both; float:left; margin:0;padding: 20px;  background:#ccf; cursor:default;}
+div {padding: 0; overflow: hidden}
+div * {vertical-align: top}
+embed{float: left;width: 170px; height:150px; margin: 0 10px 0 0;}
+img{float:left; margin:0 10px 0 0; }
+form{float:left; margin:0 10px 0 0;padding: 10px;border: 3px solid #69c}
+
+	</style>
+	<script type="text/javascript">
+	
+	var n = "Глобальная строка";
+	function f(){
+	
+	/*Вывести длину коллекций images, links, forms*/
+	
+	
+	/*Вывести длину коллекций embed и plugins
+	item(0), namedItem
+	*/
+
+	
+	/*Вывести свойствo pic у объекта document*/
+
+	 
+	/*Вывести свойствo test у объекта document*/
+
+	
+	/*Вывести свойствo n у объекта document*/
+
+	}
+	</script>
+</head>
+
+<body>
+
+<div>
+	<embed name="test" type="image/jpeg" src="img.jpg"></embed>
+	
+	<img name="pic" src="slon.gif">
+	
+	<form name="test" action="http://google.ru/search">
+	  <input type="text" name="q">
+	  <input type="submit" value="Готово">
+    </form>
+	
+	<a id="n" href="http://ya.ru">Яндекс </a>
+	 <a id="m" href="http://google.ru">Google </a>
+	 
+	 </div>
+	 
+	 <p onclick="f();"> Получить инфу</p>
+</body>
+</html>

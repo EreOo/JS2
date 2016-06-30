@@ -1,0 +1,28 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<title>Модификация элемента</title>
+    <meta charset="utf-8">
+	<script type="text/javascript">
+		function modifyMyElement()
+		{
+			var myElement = document.getElementById("myElement");
+			myElement.firstChild.nodeValue = "Новый текст";
+			myElement.style.color = "red";
+			myElement.style.backgroundColor = "#FFFFCC";
+			myElement.style.fontWidth = "bold";
+			myElement.style.fontSize = "200%";
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Модификация элемента</h1>
+	<p id="myElement">Мой элемент</p>
+	<div>
+		<a href="javascript:modifyMyElement()">Модифицировать элемент</a>
+	</div>
+
+</body>
+</html>

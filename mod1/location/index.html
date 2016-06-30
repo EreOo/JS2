@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Загрузка и перезагрузка документов</title>
+<style type="text/css">
+div {float:left;}
+p {margin:0 0 8px; padding: 20px; background:#ccf; cursor:default;width: 270px}
+iframe{border: 3px solid #69c}
+</style>
+<script type="text/javascript">
+	function f(){
+	
+	var x = frames.content;
+	/*Перезагрузить документ во фрейме - метод reload()*/
+
+	
+	/*Загрузить документ по адресу new.html - метод assign()*/
+
+	
+	/*Загрузить тот же документ - метод replace()*/
+
+	
+	/*Загрузить документ с другого сайта*/
+
+	
+	}
+	
+	function g(){
+	  var x = frames.content;
+		
+	/*Попытаться загрузить старый документ*/
+
+	
+	/*Присвоить Location строку как название*/
+
+	}
+
+	
+	</script>
+</head>
+
+<body>
+<div>
+	<p onclick="f();"> Кликни и получи приз </p>
+	
+	<iframe src="old.html" name="content"></iframe>
+	
+	<p onclick="g();"> Загружаем старый документ</p>
+</div>
+</body>
+</html>

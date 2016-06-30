@@ -1,0 +1,53 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Генерация таблицы</title>
+<style type="text/css">
+body{ margin:0;}
+#out{margin: 100px 100px 0 300px;padding: 50px; background: #69c}
+#in{padding: 40px 60px; background: #369; border: 20px solid #fff}
+#target{width: 200px; height:150px; background: #f60;}
+#in{position: relative}
+/*test{position: absolute;left:0; top:0;background: #cfc}*/
+</style>
+<script type="text/javascript">
+
+function checkCoords(e){
+// Посмотреть относительно чего будет считаться отступ
+// и проверить значения в IE e.offsetParent
+
+
+ //Добавить свойство position: relative у #in
+//e.offsetParent.offsetParent
+
+
+// Первый способ подсчета
+// Сложение смещений
+var left = 0, top = 0;
+while (e) {
+ left += e.offsetLeft;
+ top += e.offsetTop;
+ e = e.offserParent
+}
+//alert(left + "  " + top)
+
+var x = document.createElement('div');
+x.id = test;
+x.style.width = left + 'px';
+x.style.height = top + 'px';
+document.body.appendChild(x);
+
+
+}
+
+</script>
+</head>
+<body>
+<div id="out"> 
+ <div id="in">
+   <div id="target" onclick="checkCoords(this);"></div> 
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Работа с зависимыми списками. Вариант  2</title>
+<meta charset=utf-8">
+<script type="text/javascript">
+//массив для хранения построенных списков
+var s = [];
+var cities = [
+  [],
+  [
+    ['Нижний Новгород','1'],
+    ['Санкт-Петербург','2'],
+    ['Москва','3'],
+  ],
+ [
+    ['Ванкувер','1'],
+    ['Монреаль','2'],
+    ['Торонто','3'],
+  ]
+];
+  
+function createCities(e){
+//Cсылка на элемент куда будем прикреплять
+
+
+//Способ для чистки (не для IE)
+
+
+//Чистка элемента
+
+
+//строить select только для двух вариантов
+
+}
+
+</script>
+</head>
+ 
+<body>
+ <form name="f">
+<select name="country" onchange="createCities(this)">
+    <option value="0">Выбрать страну </option> 
+    <option value="1">Россия </option> 
+    <option value="2">Канада</option> 
+</select>
+     
+<span id="s1"></span>
+ </form>
+</body>
+</html>

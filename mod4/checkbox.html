@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Работа с Checkbox</title>
+<meta charset=utf-8">
+<script type="text/javascript">
+function check()
+  {
+  document.getElementById("check1").checked=true
+  }
+function uncheck()
+  {
+  document.getElementById("check1").checked=false
+  }
+</script>
+</head>
+<body>
+
+<form>
+<input type="checkbox" id="check1" />Поработаем?
+</form>
+
+<button onclick="check()">Установить Checkbox</button>
+<button onclick="uncheck()">Снять Checkbox</button>
+
+</body>
+</html>

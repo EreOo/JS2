@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Реализация drag & drop</title>
+<meta charset=utf-8">
+<style type="text/css">
+.d{
+  margin: 100px 0 0 50px;
+  width: 200px;
+  height: 200px; 
+  background: #f60;
+}
+
+#t{
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  width: 100px;  
+  height: 100px;
+  background: #369;
+}
+
+.a{
+ position: absolute;
+ margin: 0;
+}
+</style>
+
+<script type="text/javascript">
+function f(e){
+  var step = 20, time = 500, i = 0;
+ 
+ /* var w2 = document.documentElement.scrollLeft ||
+document.body.scrollLeft;
+var h2 = document.documentElement.scrollTop ||
+document.body.scrollTop;
+
+var w3 = document.documentElement.clientLeft ||
+document.body.clientLeft;
+var h3 = document.documentElement.clientTop ||
+document.body.clientTop;*/
+
+ /* var dim1 = e.getBoundingClientRect();
+  e.x = dim1.left + w2 - w3;
+  e.y = dim1.top + h2 - h3;
+  
+
+  var target = document.getElementById('t');
+  var dim2 = target.getBoundingClientRect();
+  target.x = dim2.left + w2 - w3;
+  target.y = dim2.top + h2 - h3;*/
+  
+  //склонировали элемент
+ /* var copy = e.cloneNode(true);
+  copy.className += " a";
+  copy.style.left = e.x + 'px';
+  copy.style.top = e.y + 'px';
+  copy.style.width = e.offsetWidth + 'px';
+  copy.style.height = e.offsetHeight + 'px';
+  
+  document.body.appendChild(copy);*/
+  
+  //двигаем элемент
+  /*function g(){
+    i++;
+	copy.style.left = e.x + (target.x - e.x)* i / step + 'px';
+	copy.style.top = e.y + (target.y - e.y)* i / step + 'px';
+	
+	copy.style.width = e.offsetWidth + (target.offsetWidth - e.offsetWidth)*i/step+ "px";
+	copy.style.height = e.offsetHeight + (target.offsetHeight - e.offsetHeight)*i/step+ "px";
+	
+	if (i <  step){
+	 setTimeout(arguments.callee, time/ step);
+	}
+  }
+  g();*/
+}
+</script>
+
+</head>
+
+<body>
+ <div class="d" onclick="f(this);"></div>
+  <div id="t"></div>
+  
+</body>
+</html>

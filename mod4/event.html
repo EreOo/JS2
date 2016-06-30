@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Свойства и методы событий</title>
+<meta charset=utf-8">
+<script type="text/javascript">
+// добавить элемент с которым будем работать
+  
+  
+function addEvent(element, event_name, handler){
+  try {
+      element.addEventListener(event_name,handler,false)  
+  } catch(z){
+     element.attachEvent('on'+event_name,handler)  
+  }
+}
+
+//Служебные функции по остановке обработки события дальнейшими элементами
+//Пропустить, вернемся позднее
+/*function cancelEvent(e){
+ try {
+  e.preventDefault();
+ } catch(z){
+   e.returnValue = false;
+ }
+
+}*/
+
+/*function stopEvent(e){
+ try {
+  e.stopPropagation();
+ } catch(z){
+   e.cancelBubble = true;
+ }
+
+}*/
+
+//указать слушателя события onload
+
+
+
+//системные события плывут  до window в IE
+//события мыши и клавиатуры всплывают только до документа
+function f(){
+ // Добавить обработчик h на событие submit для элемента document.q
+   
+   //Пропустить, вернемся позже
+   //Задать одно и тоже событие и в документе, и в поле формы
+
+}
+function h(e){
+   e = e || event;
+   
+   //отменить отправку события (работает кроме IE) 
+   //e.preventDefault();   
+   
+   //отменить отправку события (работает в IE) 
+   // e.returnValue = false;
+   
+   //Вернуться к служебным функциям cancelEvent
+   // разкомментировать код функций и выполнить отмену обработки события
+   //Б. в f разкомментировать одни и теже события для разных элементов
+   //cancelEvent(e);
+  
+
+}
+
+
+
+
+function m(e){
+   e = e || event;
+   
+  //Использовать функцию отмены всплытия события
+   stopEvent(e);
+  alert('Я - поле формы');
+  
+  //У всех событий есть тип события e.type
+
+  
+  //Хранится код клавиши при нажатии (keyPress - код символа)
+  
+  //Учет нажатия определенной клавиши
+
+  
+}
+
+function n(e){
+   e = e || event;
+  alert('Я - документ');
+   
+   }
+</script>
+</head>
+
+<body>
+ <form action="" name="q">
+   <input type="text" name="w"> 
+   <input type="text" name="r"> 
+   <input type="submit" value="Отправить"> 
+ </form>
+</body>
+</html>

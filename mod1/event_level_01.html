@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>Модель событий - Level 0</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+	
+    /*Прописать обработчик в первый span */
+	function my_click(element,event){
+	/*Узнать кто вызвал функцию my_click с помощью caller*/
+	
+	/*Вывести тип события type*/
+	
+	/*Вывести координату x через свойство screenX*/
+	
+	/*Вывести координату x через свойство clientX*/
+	}	
+	
+	function my_submit(element,event){
+	
+	
+	}
+	
+		function f(element,event){
+	/*Вывести тип события type*/
+
+	}
+	
+	function g(element,event){
+	/*Вывести тип события type*/
+
+
+	}
+	/* Перенести onclick в body */
+	
+	
+	/* Создать функцию обработчик onkeydown*/
+	
+	
+	/* Создать функцию обработчик onkeypress*/
+	
+	</script>
+	
+</head>
+
+<body onclick="my_click(this,event)">
+
+<div>
+	<span> Открыть окно </span>
+
+	
+	<form name="search" action="http://google.ru/search">
+	  <input type="text" name="word" onkeydown="f(this,event);"
+	  onkeypress="g(this,event);">
+	  <input type="submit" value="Отправить">
+    </form>
+	
+</body>
+</html>

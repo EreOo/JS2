@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Генерация таблицы</title>
+<style type="text/css">
+ thead td {background: #69c;}
+ tfoot td {background: #fc0;}
+ caption {white-space:nowrap;}
+ td {padding: 15px; border: 1px solid #369}
+</style>
+<script type="text/javascript">
+
+function createContent(x){
+  
+  g((x.tBodies[0] && x.tBodies[x.tBodies.length-1]) || x, 4);
+  g(x.createTHead(),2);
+  g(x.createTFoot(),1);
+ x.onclick = null;
+	
+// x.onclick = null;
+ function g(section, number){
+  for (var i=0, tr ,td; i< number; i++){
+    tr = section.insertRow(section.rows.length);
+
+	
+	for (var j=0; j<10; j++){
+	   td = tr.insertCell(tr.cells.length);
+	   td.innerHTML = tr.cells.length;
+	   	td.onclick = function(){
+		    for (var m=0; m<x.rows.length;m++){
+			x.rows[m].deleteCell(this.cellIndex);
+			};
+	  }
+	}
+  }
+ }
+  
+
+}
+
+</script>
+</head>
+<body>
+
+ <table onclick="createContent(this);">
+   <caption> Создать приложение </caption>
+   
+ </table>
+
+
+</body>
+</html>

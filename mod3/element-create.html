@@ -1,0 +1,60 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<title>Создание элементов</title>
+    <meta charset="utf-8">
+	<script type="text/javascript">
+		/*
+		**	Функция создает несколько элементов
+		**	и добавляет их в body страницы
+		*/
+		function createSomeElements()
+		{
+			// Заголовок H2
+			var h2 = createNewElement("H2", "Пример создания элементов");
+			document.body.appendChild(h2);
+			
+			// DIV
+			var div = createNewElement("DIV", "Это DIV");
+			document.body.appendChild(div);
+			
+			// Параграф текста
+			var p = createNewElement("P", "Параграф ");
+			div.appendChild(p);
+			
+			// Элемент strong
+			var strong = createNewElement("STRONG", "Жирный текст");
+			p.appendChild(strong);
+			
+			// Некоторый текст ПОСЛЕ элемента strong
+			var pText = document.createTextNode(" и далее обычный текст");
+			p.appendChild(pText);
+			
+			// загловок H3 ПЕРЕД элементом DIV
+			var h3 = createNewElement("H3", "Еще один заголовок");
+			document.body.insertBefore(h3, div);
+			
+		}
+		/*
+		**	Функция создает новый элемент с текстом
+		**		tag  - тег элемента
+		**		text - текстовое наполнение элемента
+		*/
+		function createNewElement(tag, text)
+		{
+			var newElement = document.createElement(tag);
+			var textNode = document.createTextNode(text);
+			newElement.appendChild(textNode);
+			return newElement;
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Создание элементов</h1>
+	<div>
+		<a href="javascript:createSomeElements()">Создать элементы</a>
+	</div>
+</body>
+</html>

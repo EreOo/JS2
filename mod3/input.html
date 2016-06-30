@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Фильтрация ввода в текстовое поле</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<script type="text/javascript">
+   //Скрипт очищающий форму от текста при нажатии на нее курсора 
+  function doClear(theText) { 
+
+ }
+  function doDefault(theText) {
+
+ }
+</script>
+</head>
+
+<body>
+	<h1>Ввод данных в  input и его очистка</h1>
+<INPUT type="text" name="textfield" size="40" maxlength="150"
+	value="введите ваше имя"
+	onFocus="doClear(this)"
+	onBlur="doDefault(this)">
+</body>
+</html>

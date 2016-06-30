@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Организация формы и фильтрация ввода</title>
+<style type="text/css">
+body{
+ font-family: tahoma,sans-serif;
+ font-size:12px;
+}
+form .block{
+ clear:both;
+ padding: 15px 0 0;
+}
+form .block label{
+ float:left;
+ width: 100px;
+ margin: 0 -100% 0 0;
+ line-height: 1.5em;
+}
+
+
+input{
+ font-size:1.5em;
+ /*width:20ex;
+ margin: -5px 0 0;
+ padding: 4px;*/
+ border: 1px solid #7f9db9;
+}
+
+
+input[type="file"]{
+ font-size:1.5em;
+ /*width:20ex;
+ margin: -5px 0 0;
+ padding: 4px;*/
+ border: 1px solid #7f9db9;
+}
+
+
+
+</style>
+<script type="text/javascript">
+
+function g1(e){
+// создать обработчик события во второй кнопке "Просто отправить"
+// создать переменную x,  элементом e.form
+
+// вывести из коллекции формы свойство phone
+ 
+//посмотреть что хранится в x.phone  и отдельном value
+ 
+//установить свойство phone.value в новое значение и поменять phone.defaultValue
+
+//задать обработчик onselect для input phone
+
+//задать обработчик onchange для input phone
+//убедиться что при программном изменении value change не происходит
+  
+// задать событие onselect внутри элемента input phone
+
+
+
+// задать событие onchange внутри элемента input phone
+//убедиться что не событие не сработает при программном изменении текста элемента
+
+
+}
+
+
+</script>
+</head>
+<body>
+<form action="" onsubmit="">
+  <input type="text" name="name">   
+  <input type="text" name="phone" value="12345" >   
+  
+  <label><input type="radio" name="g" value="man" onchange="alert('test')">Мужской</label>
+  <label><input type="radio" name="g" value="woman">Женский</label>
+  
+  <select name="year" id="year" multiple>
+   <option value="a0">1980</option>
+   <option value="a1">1981</option>
+   <option value="a1982">1982</option>
+   <option value="a1983">1983</option>
+  </select>
+  
+  <input type="file" name="photo" id="photo"><br>
+  
+  <button type="submit">Отправить</button>
+
+  <button type="button" onclick="g1(this)">Просто кликнуть</button>
+  <button type="reset">Сброс</button>
+  
+  
+  
+</form>
+
+</body>
+</html>

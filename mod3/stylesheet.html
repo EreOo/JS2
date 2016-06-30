@@ -1,0 +1,59 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Генерация таблицы</title>
+<style type="text/css">
+body{background: #cfc}
+</style>
+<script type="text/javascript">
+
+function addStyle(selectors, rules. e){
+ 
+ // Задать бордюр у элемента через свойство style
+ e.style.borderLeft = "15px solid #ffc";
+ 
+ // Задать новый класс и присвоить этот класс элементу
+ // через свойство className
+ 
+ 
+ //Задать плавное затухание элемента
+ /*var step = 100, time = 1000, i = 0;
+  function g(){
+    i++;
+	e.style.opacity = 1 - i/step;
+    if (i<step){
+	  setTimeout(arguments.callee, time / step);
+	}
+  }
+g();*/
+ 
+// Проверить что веведет alert(e.style.background)
+
+getStyle(e, "backgroundColor")
+}
+/*
+function getStyle(element,style){
+
+
+}*/
+
+function getStyle(element,style){
+ try {
+   var x = element.ownerDocument.defaultView.getComputedStyle(element, null);
+ } catch(z){
+   x = element.currentStyle;
+ }
+ alert(x[style]);
+}
+
+</script>
+</head>
+<body>
+<div id="out"> Внешний
+ <div id="in"> Внутренний
+   <div id="target" onclick="addStyle(this);">Самый вложенный</div> 
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+http://www.w3.org/TR/DOM-Level-2-Core/core.html
+https://developer.mozilla.org/ru/DOM
+http://www.dhtml.ru/ref/DOM/
+http://www.w3schools.com/htmldom/dom_examples.asp
+http://shamansir.github.com/JavaScript-Garden/#other
+http://www.uploadify.com/demos/

@@ -1,0 +1,76 @@
+﻿<!doctype html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Базовый пример - Анимация прозрачности (без старых IE)</title>
+<style type="text/css">
+h1{font:22px Arial,Tahoma}
+h1 span{color: #009}
+.comment {color: #090}
+
+body{ margin:0;padding-left: 20px}
+#out{margin: 100px 100px 0 300px;padding: 50px; background: #69c}
+#in{padding: 40px 60px; background: #369; border: 20px solid #fff}
+#target {width: 200px; height:150px; background: #f60;font: 30px arial;color: #efe2af}
+#target.a{width: 300px; height:300px; background: #fff;}
+#target.my{background: #00ff00;}
+
+</style>
+<script type="text/javascript">
+/*Функция, принимает 
+element - элемент прзрачность которого нужно менять 
+steps - количество шагов
+timeStep- время шага 
+finOpasity - конечную прозрачность
+
+Не работает в IE старых версий
+*/
+  function animation_opacity(element, steps, timeStep, finOpasity){
+   
+    var i = 0 ;
+	var curOpacity=0
+	if (element.style.opacity) var curOpacity=parseInt(element.style.opacity);
+	
+	if (curOpacity < finOpasity) {var direction = -1; var beg=0}
+	 else {var direction = 1; var beg=1};
+
+	function iterate(){
+	i++
+	element.style.opacity = beg - direction*i/steps;
+    if (i<steps){ 
+	/*Для отладки и изучения скрипта можно раскоментировать
+    element.innerHTML = "opacity="+element.style.opacity+"<br>";
+    element.innerHTML += "direction="+direction+"<br>";
+    element.innerHTML += "finOpasity="+finOpasity+"<br>";
+    element.innerHTML += "curOpacity="+curOpacity+"<br>";*/
+	setTimeout(iterate, timeStep*1000);}
+	}
+  
+   iterate();
+
+   
+  }
+var x1 = {};
+function changeStyle(e){
+  animation_opacity(e, 100, 0.02,0);
+}
+
+
+</script>
+</head>
+<body>
+<h1>Пример вспомогательной js-функции для анимации <span>animation_opacity()</span></h1>
+<code class="comment">/*Функция, принимает 
+element - элемент прозрачность которого нужно менять 
+steps - количество шагов
+timeStep- время шага 
+finOpasity - конечную прозрачность
+*/</code>
+  function animation_opacity(element, steps, timeStep, finOpasity)
+<div id="out" > 
+ <div id="in">
+   <div id="target"  onclick="changeStyle(this);">Нажмите</div> 
+ </div>
+</div>
+</body>
+</html>
