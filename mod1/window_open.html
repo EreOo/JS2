@@ -13,39 +13,44 @@ p{float: left; margin: 0 8px 0 0; padding: 20px; cursor: default;}
 var win;
 
 function win_open(){
- var w = 300;
- var h = 200;
+ var w = 30;
+ var h = 20;
  var l = 200;
  var t = 300;
- 
- /* Открыть новое окно - метод open()*/
 
- 
+ /* Открыть новое окно - метод open()*/
+win = open("http://www.specialist.ru/section/programming","win","width=40,height=400,left=200,top=300");
+
  /*Установить параметры окна*/
 
- 
+
  /*Открыть окно с установленными параметрами*/
- 
- 
+
+
  /*Открыть окно с определенным именем*/
 
- 
+
  /*Открыть окно с определенным адресом*/
 
 }
 
 function win_close(){
 /* Закрыть дочернее окно - метод close()*/
+if(win && !win.closed){
+  win.close();
+}
 }
 function win_move(){
 /*Проверить существование дочернего окна - метод closed()*/
- 
+
   if (win && !win.closed){
   /*Передать фокус дочернему окну - метод focus()*/
- 
-  
+ win.focus();
+   win.moveBy(50,50);
+
+
   /*Передвинуть дочернее окно на 50 пикселей вправо и вниз - метод moveBy()*/
-  
+
   }
 }
 </script>

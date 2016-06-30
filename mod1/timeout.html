@@ -4,42 +4,58 @@
 <title>Отложенный вызов исполняемого кода (таймеры)</title>
 <meta charset="utf-8">
 <style type="text/css">
-div{float: left; margin: 0 8px 0 0; padding: 20px; background: #369; color:#fff;font: 40px tahoma, sans-serif;}
+div{float: left; margin: 8px 8px 8px 8px; padding: 20px; background: #f0f; color:#fff;font: 40px tahoma, sans-serif;}
 </style>
 <script type="text/javascript">
 function f(){
- var x = "Прошла 1 секунда";
+ var x = "Test completed.";
  alert(x);
 }
 
 /*Вызвать  с задержкой в 1с код функции f(), записав инструкции в строку*/
-
+//setTimeout(f,1000);
 
 /*Вызвать функцию с задержкой в 1с  функции f(), записав как инструкцию в строке*/
 
 
 /*Вызвать с задержкой в 1с безымянную функцию, в теле которой вызвать f()*/
-
+// setTimeout(function () {
+//   f();
+// },1000);
 
 /*Вызвать с задержкой в 1с функцию f(),по ссылке*/
 
 
-var count = 0;
-function g(){
- 
- /*Написать инструкции, которые будут вызывать эту же функцию 5 раз с задержкой в 1с*/
+// var count = 0;
+// function g(){
+//  /*Написать инструкции, которые будут вызывать эту же функцию 5 раз с задержкой в 1с*/
+// if (count < 9999999999999999999) {
+// count++;
+// document.body.innerHTML += "<div>"+count+"</div>";
+// setTimeout(g,500);
+// }
+//
+//  }
+//
+//
+// setTimeout(g,500);
 
- 
- }
- 
  /*Вызвать с задержкой в 0с функцию g() */
- 
+
+function foo(){
+  var t = new Date();
+  t = t.toLocaleTimeString();
+  document.body.innerHTML = "<div>"+t+"</div>";
+  setTimeout(foo,1000);
+}
+
+setTimeout(foo, 0);
 
 </script>
 </head>
 <body>
 
- 
+
 
 </body>
 </html>
