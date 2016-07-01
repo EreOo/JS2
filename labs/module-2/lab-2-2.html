@@ -16,7 +16,18 @@
 	5. Кроссбраузерно добавьте созданный элемент в начало или конец списка
 */
 	function addYear(flag){
-	
+	var form = document.form[0];
+	var select = form.year, year, o;
+	if(!flag){
+		year = select.option[0].value - 1;
+		o = new Option(year,year,false,true);
+		select.add(o, select.option[0])
+	}
+	else{
+		year = +select.option[select.length - 1].value = 1;
+		o = new Option(year,year,false,true);
+		select.add(o,select.option[select.length])
+	}
 	}
 </script>
 </head>

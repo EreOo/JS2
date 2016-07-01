@@ -18,8 +18,40 @@
 				- изменить цвет рамки пустого поля на красный
 				- данные не отправлять!
 		*/
-		
-	</script>	
+
+
+
+		function checkForm() {
+			var form = document.forms[0];
+		//console.log(form.p1.value);
+		var v1, v2, v3, v4, v5, r;
+		v1 = form.p1.value;
+		v2 = form.p2.value;
+			v3 = form.p3.value;
+				v4 = form.p4.value;
+					v5 = form.p5.value;
+
+				var m = [v1, v2, v3, v4, v5];
+				var f = [form.p1,form.p2,form.p3,form.p4,form.p5];
+
+console.log(m);
+
+for(var i = 0; i < m.length; i++){
+	if(m[i] == ""){
+	 console.log(v1);
+	 f[i].style.borderColor = "#f00"
+
+	}
+	else {
+		f[i].style.borderColor = "grey"
+	}
+}
+
+
+
+		}
+
+	</script>
 </head>
 
 <body>
